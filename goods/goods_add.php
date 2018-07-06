@@ -16,13 +16,15 @@ s_loginCheck();
   
 <p>商品追加</p>
 
-<form method="POST" action="goods_add_check" enctype="multipart/form-data">
-  <label>商品名を入力<br></label>
-
-
-
-
-
+<form method="POST" action="goods_add_check.php" enctype="multipart/form-data">
+  <label>商品を入力<br>
+  <input type="text" name="title" required></label><br><br>
+  <label>価格を入力<br>
+  <input type="text" name="price" required></label><br><br>
+  <label>画像を選択
+  <input type="file" name="image"></label><br><br>
+  <input type="submit" value="登録"><br><br><br><br>
+  <a href="goods_list.php">商品一覧へ戻る</a>
 </form>
 
 

@@ -10,7 +10,7 @@ print '<br>';
 
 $pdo = db_connect();
 
-$sql = 'SELECT title, price, image FROM good WHERE 1';
+$sql = 'SELECT No,title, price, image FROM goods WHERE 1';
 $stmt= $pdo->prepare($sql);
 $stmt->execute();
 
@@ -24,7 +24,8 @@ while(true){
   if($rec==false){
     break;
   }
-  print '<input type="radio" name="goods_code" value="'.$rec['code'].'">';
+  print '<input type="radio" name="goods_code" value="'.$rec['No'].'">';
+  print $rec['No'];
   print $rec['title'].'---';
   print $rec['price'].'円<br>';
 }
@@ -33,7 +34,7 @@ print '<input type="submit" name="add" value="追加">';
 print '<input type="submit" name="edit" value="修正">';
 print '<input type="submit" name="delete" value="削除">';
 print '<br>';
-
+print '</form>';
 ?>
 
 <body>
