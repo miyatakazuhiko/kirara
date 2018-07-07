@@ -5,12 +5,18 @@ s_loginCheck();
 
 $goods_code = $_GET['goods_code'];
 
+print $goods_code;
+
 $pdo = db_connect();
 
-$sql = 'SELECT No, title, price, image FROM goods WHERE No=?';
+$sql = 'SELECT No, title, price, image FROM goods WHERE No=:No';
 $stmt = $pdo->prepare($sql);
-$data[] = $goods_code;//実行するNoを$data[]に入れて、次でexecute($data)
-$stmt->execute($data);
+$stmt->bindValue(':No', $goods_code, PDO::FETCH_ASSOC);
+// $sql = 'SELECT No, title, price, image FROM goods WHERE No=?';
+// $stmt = $pdo->prepare($sql);
+// $data[] = $goods_code;//実行するNoを$data[]に入れて、次でexecute($data)
+// $stmt->execute($data);
+$stmt->execute();
 
 $rec = $stmt->fetch(PDO::FETCH_ASSOC);
 

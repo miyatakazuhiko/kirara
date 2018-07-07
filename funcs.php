@@ -28,7 +28,10 @@ function loginCheck(){
 //staffLOGIN認証チェック関数
 function s_loginCheck(){
   if( !isset($_SESSION["s_chk_ssid"]) || $_SESSION["s_chk_ssid"] !=session_id()){
-    echo "LOGIN Error!";
+    echo '<script type="text/javascript">';
+    echo "alert('ログインエラー！！トップページに戻ります。');";
+    echo "window.location.href='../index.html'";
+    echo '</script>';
     exit();
   } else {
     session_regenerate_id(true);

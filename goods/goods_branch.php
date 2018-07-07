@@ -24,7 +24,7 @@ if(isset($_POST['edit'])==true){
   if(isset($_POST['goods_code'])==false){
     not_select();
   }
-  $goods_code = $POST['goods_code'];
+  $goods_code = $_POST['goods_code'];
   header('Location: goods_edit.php?goods_code='.$goods_code);
   exit;
 }
@@ -35,5 +35,5 @@ if(isset($_POST['delete'])==true){
     not_select();
   }
   $goods_code = $_POST['goods_code'];
-  header('Location: goods_delete.php?goods_code='.$goods_code);
+  header('Location: goods_delete_check.php?goods_code='.$goods_code);
 }

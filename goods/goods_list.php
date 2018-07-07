@@ -25,7 +25,7 @@ while(true){
     break;
   }
   print '<input type="radio" name="goods_code" value="'.$rec['No'].'">';
-  print $rec['No'];
+  print $rec['No'].'---';
   print $rec['title'].'---';
   print $rec['price'].'円<br>';
 }
