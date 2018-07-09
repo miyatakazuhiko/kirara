@@ -13,10 +13,14 @@ if(
 }
 
 $title = $_POST['title'];
+$author = $_POST['author'];
+$category = $_POST['category'];
 $price = $_POST['price'];
 $image = $_FILES['image'];
 
 echo '商品名:', $title, '<br>';
+echo '著作者:', $author, '<br>';
+echo 'カテゴリー:', $category, '<br>'; 
 echo '値段:'  , $price, '<br>';
 
 if($image['size']>0){
@@ -38,6 +42,8 @@ if($image=='' || preg_match('/\A[0-9]+\z/',$price)==0 || $image["size"]>100000){
   echo '上記の商品を追加します。<br>',
        '<form method="POST" action="goods_add_done.php">',
        '<input type="hidden" name="title" value="'.$title.'">',
+       '<input type="hidden" name="author" value="'.$author.'">',
+       '<input type="hidden" name="category" value="'.$category.'">',
        '<input type="hidden" name="price" value="'.$price.'">',
        '<input type="hidden" name="image_name" value="'.$image['name'].'">',
        '<br>',

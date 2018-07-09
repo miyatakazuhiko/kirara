@@ -19,6 +19,10 @@ s_loginCheck();
 <form method="POST" action="goods_add_check.php" enctype="multipart/form-data">
   <label>商品を入力<br>
   <input type="text" name="title" required></label><br><br>
+  <lable>著作者<br>
+  <input type="text" name="author" required></label><br><br>
+  <label>カテゴリー<br>
+  <input type="text" name="category" required></lable><br><br>
   <label>価格を入力<br>
   <input type="text" name="price" required></label><br><br>
   <label>画像を選択

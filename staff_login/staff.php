@@ -6,6 +6,13 @@ s_loginCheck();
 
 $pdo = db_connect();
 
+if($_SESSION["life_flg"]==0){
+  echo '管理権限がありません。<br><br>';
+  echo '<a href="../index.html">', 'ログインページへ戻る。</a>';
+  exit;
+}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -27,10 +34,10 @@ $pdo = db_connect();
 
 <?php if($_SESSION["kanri_flg"]==1){ ?>
   <a href="staff_add.php">管理者追加・変更</a><br><br>
-<?php }?><!-- 済  -->
+<?php }?>
 <a href="staff_user_list.php">ユーザー一覧</a><br><br><!-- 未  -->
-<a href="../goods/goods_list.php">商品一覧/編集・追加・削除</a><br><br><!-- 未  -->
-<a href="../logout.php">ログアウト/ログイン画面へ戻る</a><br><br><!-- 済  -->
+<a href="../goods/goods_list.php">商品一覧/編集・追加・削除</a><br><br>
+<a href="../logout.php">ログアウト/ログイン画面へ戻る</a><br><br>
 
 </body>
 </html>
