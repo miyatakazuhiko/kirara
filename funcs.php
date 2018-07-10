@@ -47,6 +47,15 @@ function QueryError($res,$stmt){
   }
 }
 
+//会員登録時の$_SESSION初期化まとめ
+function user_new_session(){
+      $_SESSION['user_name_id_check_out'] = null;
+      $_SESSION['user_name_pass_check_out'] = null;
+      $_SESSION['user_id_pass_check_out'] = null;  
+      $_SESSION['user_id_check_out'] = null;
+      $_SESSION['correct'] = null;
+}
+
 //凄い管理者用
 function s_kanri(){
   if($_SESSION["kanri_flg"]!=1){
