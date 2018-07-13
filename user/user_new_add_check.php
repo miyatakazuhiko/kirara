@@ -2,6 +2,7 @@
 session_start();
 include('../funcs.php');
 
+//session初期化しないと、入力ミスがあったときにミスしてないところもミス表記になる。
 user_new_session();
 // var_dump(  $_SESSION['user_name_id_check_out']);
 // exit;
